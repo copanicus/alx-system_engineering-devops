@@ -1,0 +1,2 @@
+#!/bin/bash
+tr 'B-bN-Mn-Zc-z' 'C-Zc-yB-Mb-m'
