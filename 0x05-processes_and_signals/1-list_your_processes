@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Displays all processes for all users including those with a TTY
+
+ps -ejH
+
+# Displays in a user oriented format
+
+ps -ef --forest
