@@ -1,5 +1,5 @@
 ## 0x08. Networking basics #1
-#! [](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/285/s7kpNYq.png)
+#![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/285/s7kpNYq.png)
 
 # Resource
 Read or watch:
