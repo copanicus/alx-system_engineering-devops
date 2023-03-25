@@ -23,8 +23,8 @@ In this project I will be writing Puppet Manifests.
 * File contains *I love Puppet*
 
 * **1. Install a package**
-[1-install_a_package.pp](./1-install_a_package.pp): Puppet manifest to install:
-* puppet-lint
+[1-install_a_package.pp](./1-install_a_package.pp): Using Puppet, install flask from pip3.:
+* Install flask
 * Version 2.1.0
 
 * **2. Execute a command**
