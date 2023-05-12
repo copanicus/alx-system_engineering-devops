@@ -1,0 +1,40 @@
+Title: Postmortem: Service Outage and Performance Degradation Incident
+
+Issue Summary:
+Duration: May 10, 2023, 09:00 AM - May 11, 2023, 02:00 AM (UTC)
+Impact: The file upload service experienced an outage, resulting in slow or failed uploads for approximately 30% of the users.
+
+Timeline:
+
+Issue Detected: May 10, 2023, 09:15 AM (UTC)
+Detection Method: A monitoring alert was triggered, indicating a significant increase in failed upload requests.
+Actions Taken: The investigation focused on the file upload service, storage infrastructure, and network connectivity. Initial assumption: The issue was related to a storage system failure or network congestion.
+Misleading Investigation: The storage infrastructure was thoroughly checked, but no issues were found. Network congestion was also ruled out after analyzing network traffic logs.
+Escalation: The incident was escalated to the backend development team and the infrastructure team for further investigation and resolution.
+Incident Resolution: After extensive analysis, the root cause was identified and mitigated, leading to service restoration.
+Root Cause and Resolution:
+Root Cause: The issue was caused by an exhausted connection pool in the file upload service's database layer. Due to a misconfiguration, connections were not being released properly, leading to a depletion of available connections and subsequent service degradation.
+
+Resolution: The following steps were taken to fix the issue:
+
+Increased the maximum number of allowed database connections to handle peak loads.
+Fixed the misconfiguration that prevented connections from being released correctly.
+Implemented connection pooling optimizations to ensure efficient connection handling.
+Conducted thorough testing to validate the changes and ensure service stability.
+Corrective and Preventative Measures:
+
+Improve monitoring: Enhance monitoring systems to detect and alert on connection pool exhaustion, allowing for proactive action before service degradation occurs.
+Load testing and capacity planning: Conduct regular load tests to assess the system's capacity and ensure appropriate resource allocation.
+Implement automated scaling: Utilize auto-scaling mechanisms to dynamically adjust resources based on demand, ensuring optimal performance during peak usage periods.
+Continuous configuration review: Regularly review system configurations to identify and rectify potential misconfigurations that could impact service reliability.
+Establish incident response procedures: Define clear escalation paths and communication channels to facilitate swift incident resolution and minimize downtime.
+Documentation and knowledge sharing: Document the incident, its resolution, and lessons learned to improve the team's collective knowledge and prevent similar issues in the future.
+Tasks to Address the Issue:
+
+Update monitoring system to include connection pool metrics and alerts.
+Conduct load testing to determine appropriate database connection pool settings.
+Develop automation scripts to regularly validate the correct release of connections.
+Enhance documentation on system configurations and best practices for connection pooling.
+Conduct incident response training and drills to improve response time and efficiency.
+Conclusion:
+The file upload service outage and performance degradation incident was caused by an exhausted connection pool in the database layer. By promptly identifying and addressing the root cause, implementing necessary fixes, and establishing preventive measures, the service was successfully restored, and steps were taken to prevent similar incidents in the future. The incident highlighted the importance of robust monitoring, proactive load testing, and regular configuration reviews to ensure optimal system performance and user experience.
